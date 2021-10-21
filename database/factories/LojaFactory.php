@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Loja;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class LojaFactory extends Factory
 {
@@ -22,7 +23,10 @@ class LojaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "nome" => $this->faker->name(),
+            "email" => $this->faker->unique()->safeEmail(),
+            "created_at" => now(),
+            "updated_at" => now()
         ];
     }
 }
