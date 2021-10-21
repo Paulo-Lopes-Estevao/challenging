@@ -14,7 +14,7 @@ class CreateLojasTable extends Migration
     public function up()
     {
         Schema::create('lojas', function (Blueprint $table) {
-            $table->uuid("id")->primary();
+            $table->increments("id");
             $table->string("nome",45);
             $table->string("email",75);
             $table->timestamps();
