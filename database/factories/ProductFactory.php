@@ -22,7 +22,10 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            "nome" => $this->faker->name(),
+            "valor" => 1000.00,
+            "loja_id" => 1,
+            "ativo" => true,
         ];
     }
 }
