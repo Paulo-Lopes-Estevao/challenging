@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Loja;
 use Illuminate\Database\Seeder;
 
 class LojaSeeder extends Seeder
@@ -13,6 +14,6 @@ class LojaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Loja::factory()->count(3)->create();
     }
 }
