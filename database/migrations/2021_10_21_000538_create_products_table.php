@@ -15,11 +15,13 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->uuid("id")->primary();
-            $table->string("nome",65);
-            $table->integer("valor");
+            $table->string("nome", 65);
+            $table->decimal("valor");
+            $table->uuid('loja_id');
+            $table->boolean('ativo');
             $table->foreign('loja_id')
                 ->references('id')
-                ->on('loja')
+                ->on('lojas')
                 ->onDelete('cascade');
             $table->timestamps();
         });
